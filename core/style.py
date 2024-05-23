@@ -127,7 +127,7 @@ class Style:
 		return f"\u001b[{y};{x}H"
 	
 	def write(text="\n"):
-		stdout.write(text)
+		stdout.write(f'{text}\n')
 		stdout.flush()
 	
 	def writew(text="\n", wait=0.01):
@@ -245,22 +245,17 @@ def run_exception(text: str, highlight: bool=False):
 
 menu = f"""
 {FG.rgb(64, 224, 208)}
-	  ╔═════════════════════════════════@hex_warehouse═╗
-	  ║                     Другое                     ║
-	  ║ 0 - Выход                                      ║
-	  ║                   Анонимность                  ║
-	  ║ 1. Замена MAC-адреса                           ║
-	  ║ 2. Генерация фейкового User-Agent              ║
-	  ║                  Этичный хакинг                ║
-	  ║ 3. Сканер SQL-инъекций                         ║
-	  ║ 4. Сканер XSS-уязвимостей                      ║
-	  ║ 5. Сканер портов                               ║
-	  ║ 6. SYN-сканер портов                           ║
-	  ║                      OSINT                     ║
-	  ║ 7. Информация о IP адресе                      ║
-	  ║ 8. Информация о номере телефона                ║
-	  ║ 9. Получить IP адрес сайта                     ║
-	  ║ 10. Получить название сервера сайта            ║
-	  ║ 11. Получить все ссылки с сайта                ║
-	  ╚════════════════════════════════════════════════╝
+	╔═════════════════════════════════@hex_warehouse═╗   
+	║                     Other                      ║
+	║ 0 - Exit                                       ║
+	║                    Anonymity                   ║
+	║ 1 - Generate fake user agent                   ║
+	║ 2 - Change MAC Address                         ║
+	║                    Scanners                    ║
+	║ 3 - DNS Black List scanner                     ║
+	║ 4 - Links extractor                            ║
+	║ 5 - Port Scanner v1                            ║
+	║ 6 - Port SYN Scanner                           ║
+	║ 7 - SQL Injection
+	╚════════════════════════════════════════════════╝
 """

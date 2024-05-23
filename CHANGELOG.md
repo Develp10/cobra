@@ -1,3 +1,9 @@
+commit d13d4da8d50864cd1d00f9b7e1b2a467d1c2f247
+Author: AlexeevDeveloper <alexeev.developer@gmail.com>
+Date:   Sat May 18 01:55:15 2024 +0700
+
+    update requirements and update changelog
+
 commit f4bd1f85b64109b287771f80eb5f056ba24daee7
 Author: AlexeevDeveloper <alexeev.developer@gmail.com>
 Date:   Sat May 18 01:53:51 2024 +0700

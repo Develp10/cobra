@@ -62,18 +62,19 @@ Here you can see what paintlog can already do and what else is planned to be add
  - [x] DNS Black List scanner
  - [x] Scanner (extract links from site)
  - [x] Port scanner v1
- - [x] Port scanner v2
  - [x] SQL Injection scanner
  - [x] Port syn-scanner
  - [x] XSS Scanner
+ - [x] Meterpreter Session Scanner (windows)
+ - [x] ARP Spoofing detector
+ - [-] Malware scanner
+ - [-] Analyze files with Virus Total API
  - [ ] Search in social networks by nickname
  - [ ] Information Visualisation (graphics, plots)
- - [ ] Malware scanner
- - [ ] Analyze files with Virus Total API
  - [ ] System info collector
 
 ## Copyright
-Copyright © 2024, Alexeev Bronislav
+Copyright © 2024, Alexeev Bronislav, BSD 3 License
 
 All rights reversed
 

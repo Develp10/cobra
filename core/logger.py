@@ -30,7 +30,6 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
-from time import monotonic
 import ast
 import logging
 import inspect
@@ -487,15 +486,17 @@ class Logger:
 		---------
 		 + message: str - text of message
 		 + msg_type: str - type of message
-		+ highlight: bool=False - need to highlight text
+		 + highlight: bool=False - need to highlight text
+		 + caller_function=None - caller function
 
 		"""
 		msg_type = msg_type.lower()
 
 		if caller_function is None:
-			caller_function = inspect.stack()[1][1]
+			caller_function = inspect.stack()[1][3]
+			path = inspect.stack()[1][1]
 			lineno = inspect.stack()[1][2]
-			caller_function = f'{caller_function} line {lineno}'
+			caller_function = f'{caller_function}() line {lineno} at {path}'
 
 		if msg_type == 'info':
 			self.writelog('info', message, highlight, caller_function)
@@ -518,31 +519,16 @@ class Logger:
 		+ func - executed func
 
 		"""
+		arguments = ()
+
 		def wrapper(*args, **kwargs):
-			func(*args, **kwargs)
+			result = func(*args, **kwargs)
+			return result
 		
 		message = f'function executed at {datetime.now()}'
-		self.writelog('debug', message, True, func.__name__)
+
+		self.writelog('debug', message, True, f'{func.__name__}{arguments}')
 		
-		return wrapper
-
-	def benchmark(self, func, *args, **kwargs):
-		"""Measuring the speed of function execution (decorator).
-
-		Arguments:
-		---------
-		+ func - executed func
-
-		"""
-		start = monotonic()
-		def wrapper(*args, **kwargs):
-			func(*args, **kwargs)
-		end = monotonic()
-		total = round(end - start, 5)
-
-		message = f'benchmark @ Execution function time: {total} sec', True
-		self.writelog('debug', message, True, func.__name__)
-
 		return wrapper
 
 
