@@ -1,3 +1,9 @@
+commit 23a21e1e186cf8bb325eef8a4f401fb86689585c
+Author: AlexeevDeveloper <alexeev.developer@gmail.com>
+Date:   Thu May 23 22:02:19 2024 +0700
+
+    add file scanner, meterpreter session scanner, spoofing detector, update code, fix errors, update requirements, update docs
+
 commit d13d4da8d50864cd1d00f9b7e1b2a467d1c2f247
 Author: AlexeevDeveloper <alexeev.developer@gmail.com>
 Date:   Sat May 18 01:55:15 2024 +0700

@@ -67,8 +67,8 @@ Here you can see what paintlog can already do and what else is planned to be add
  - [x] XSS Scanner
  - [x] Meterpreter Session Scanner (windows)
  - [x] ARP Spoofing detector
- - [-] Malware scanner
- - [-] Analyze files with Virus Total API
+ - [x] Malware scanner
+ - [x] Analyze files with Virus Total API
  - [ ] Search in social networks by nickname
  - [ ] Information Visualisation (graphics, plots)
  - [ ] System info collector
